@@ -159,6 +159,14 @@ h2 {
     border-bottom: 2px solid var(--secondary);
 }
 
+.dark-mode h2 {
+    color: var(--text-dark);
+}
+
+.dark-mode h3 {
+    color: var(--text-dark);
+}
+
 h3 {
     color: var(--primary);
     font-size: 1.3rem;
