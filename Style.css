@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+:root {
+    --primary: #0A2463;       /* Dark Blue Main */
+    --primary-dark: #051744;  /* Darker Blue */
+    --secondary: #3E64FF;     /* Lighter Blue */
+    --accent: #FFC107;        /* Highlight / Active Tab */
+    --bg-light: #FFFFFF;      /* White Background */
+    --bg-white: #F8FAFD;      /* Light Gray White for Cards */
+    --text-dark: #0A2463;     /* Dark Blue Text */
+    --text-medium: #334155;   /* Medium Gray Text */
+    --text-light: #64748B;    /* Light Gray Text */
+    --border: #E2E8F0;
+}
+
+.dark-mode {
+    --bg-light: #0F172A;
+    --bg-white: #1E293B;
+    --text-dark: #F1F5F9;
+    --text-medium: #CBD5E1;
+    --text-light: #94A3B8;
+    --border: #334155;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding-top: 0;
+}
+
+.container {
+    width: 94%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- HEADER --- */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 0.7rem 0;
+    position: static;
+    width: 100%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+}
+
+.logo h1 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: white;
+}
+
+.header-controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+#searchBox {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 20px;
+    width: 170px;
+    font-size: 0.85rem;
+    background: white;
+    color: var(--primary);
+}
+
+#themeToggle {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: var(--primary);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+#themeToggle:hover {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+/* --- NAVIGATION BAR --- */
+nav {
+    background: var(--primary);
+    padding: 0.6rem 0;
+    margin: 0.3rem 0;
+    border-radius: 4px;
+    position: static;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: block;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+/* --- MAIN CONTENT --- */
+section {
+    padding: 1.2rem 0;
+    margin-top: 0.5rem;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+}
+
+h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin: 1.5rem 0 0.8rem 0;
+}
+
+/* --- CARDS / INFO BOXES --- */
+.card {
+    background: var(--bg-white);
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--secondary);
+}
+
+.card p {
+    color: var(--text-medium);
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+.card ul {
+    margin-left: 1.5rem;
+    color: var(--text-medium);
+}
+
+/* --- IMAGE SLIDER --- */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10, 36, 99, 0.7);
+    color: white;
+    border: none;
+    font-size: 1.4rem;
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* --- GALLERY: SPACED + TITLES --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    background: var(--bg-white);
+    padding: 0.8rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+}
+
+.gallery-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-medium);
+}
+
+/* --- ANNOUNCEMENT FILTER --- */
+.filter-buttons {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.filter-buttons button {
+    padding: 0.4rem 0.9rem;
+    border: none;
+    border-radius: 20px;
+    background: var(--primary);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+.announcement-item small {
+    display: block;
+    margin-top: 0.6rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE FOR MOBILE --- */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        text-align: center;
+    }
+    #searchBox {
+        width: 100%;
+        max-width: 240px;
+    }
+    .nav-links {
+        gap: 0.25rem;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    .slider {
+        height: 180px;
+    }
+}

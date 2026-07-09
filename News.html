@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Announcements | One Cainta College</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container header-top">
+        <div class="logo">
+            <img src=" content://com.android.providers.downloads.documents/document/msf%3A1000010392 " alt="One Cainta College Logo">
+            <h1>One Cainta College</h1>
+        </div>
+        <div class="header-controls">
+            <input type="text" id="searchBox" placeholder="Search content...">
+            <button id="themeToggle">🌙 Dark Mode</button>
+        </div>
+    </div>
+    <nav>
+        <ul class="nav-links container">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">School History</a></li>
+            <li><a href="mission-vision.html">Mission & Vision</a></li>
+            <li><a href="faculty.html">Faculty Directory</a></li>
+            <li><a href="programs.html">Academic Programs</a></li>
+            <li><a href="calendar.html">School Calendar</a></li>
+            <li><a href="news.html" class="active">News & Announcements</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container">
+    <h2>News & Announcements</h2>
+    <div class="filter-buttons">
+        <button onclick="filterAnnouncements('all')" class="active">All</button>
+        <button onclick="filterAnnouncements('enrollment')">Enrollment</button>
+        <button onclick="filterAnnouncements('scholarship')">Scholarship</button>
+        <button onclick="filterAnnouncements('events')">Events</button>
+    </div>
+
+    <div class="announcement-item card" data-category="enrollment">
+        <h3>Enrollment Schedule A.Y. 2026–2027</h3>
+        <p>Enrollment will start on August 1, 2026. Requirements: Form 137/138, PSA Birth Certificate, Certificate of Good Moral Character, and 2x2 ID photos.</p>
+        <small>Posted: July 5, 2026</small>
+    </div>
+
+    <div class="announcement-item card" data-category="scholarship">
+        <h3>Scholarship Applications Now Open</h3>
+        <p>Qualified students may apply for CHED Merit, UniFAST, and LGU scholarships. Deadline of submission is July 31, 2026.</p>
+        <small>Posted: July 2, 2026</small>
+    </div>
+
+    <div class="announcement-item card" data-category="events">
+        <h3>Foundation Day Celebration 2026</h3>
+        <p>Join us on September 12, 2026 for our annual Foundation Day. Activities include academic contests, sports competitions, and cultural presentations.</p>
+        <small>Posted: June 28, 2026</small>
+    </div>
+
+    <div class="announcement-item card" data-category="events">
+        <h3>Graduation Ceremony Schedule</h3>
+        <p>The 2027 Commencement Exercises will be held on May 22, 2027 at the Cainta Municipal Gymnasium.</p>
+        <small>Posted: June 15, 2026</small>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 One Cainta College. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
