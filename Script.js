@@ -20,6 +20,43 @@ if (themeToggle) {
     });
 }
 
+// Hamburger menu toggle (mobile/tablet nav)
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navLinks = document.getElementById('navLinks');
+
+if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+
+    // Close the menu automatically after tapping a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+        });
+    });
+}
+
+// Move the theme toggle button into the mobile nav dropdown on small screens,
+// and back into the header controls on desktop/tablet.
+const headerControls = document.querySelector('.header-controls');
+const themeToggleSlot = document.getElementById('themeToggleSlot');
+const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+function placeThemeToggle(e) {
+    if (!themeToggle) return;
+    if (e.matches) {
+        if (themeToggleSlot) themeToggleSlot.appendChild(themeToggle);
+    } else {
+        if (headerControls) headerControls.insertBefore(themeToggle, hamburgerBtn);
+    }
+}
+
+if (themeToggleSlot && headerControls) {
+    placeThemeToggle(mobileQuery);
+    mobileQuery.addEventListener('change', placeThemeToggle);
+}
+
 const searchBox = document.getElementById('searchBox');
 if (searchBox) {
     searchBox.addEventListener('input', () => {
