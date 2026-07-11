@@ -225,6 +225,16 @@ h3 {
     color: var(--text-medium);
 }
 
+.card a {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.card a:hover {
+    color: var(--accent);
+}
+
 /* --- IMAGE SLIDER --- */
 .slider {
     position: relative;
