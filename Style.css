@@ -253,24 +253,23 @@ h3 {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
+    gap: 0.5rem;
     margin-top: 1rem;
 }
 
 .gallery-item {
     background: var(--bg-white);
-    padding: 0.8rem;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    text-align: center;
+    overflow: hidden;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 160px;
+    height: 200px;
     object-fit: cover;
     border-radius: 4px;
-    margin-bottom: 0.6rem;
+    display: block;
 }
 
 .gallery-title {
